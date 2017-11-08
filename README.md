@@ -12,7 +12,7 @@ Nutriomly = Nutrition + Randomly. Tasty, healthy and nutritious random dishes fo
 - Desayuno / Merienda 
 - Bocadillo 
 
-## Características
+## Características pendientes
 - Agregar/Editar ingredientes de cada categoría
 - Establecer horario de las 4 comidas y 2 bocadillos
 - Seleccionar al menos 10 ingredientes que te gusten de cada categoria
