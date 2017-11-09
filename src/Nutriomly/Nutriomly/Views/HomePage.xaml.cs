@@ -3,6 +3,7 @@ using Nutriomly.Data;
 using Nutriomly.Models;
 using Nutriomly.Resources;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -67,7 +68,7 @@ namespace Nutriomly.Views
                     GenerateFood(Categories.LunchAndDinner);
                     break;
                 default:
-                    TimeFor.Text = "\U0001f376 " + AppResources.TimeFor + AppResources.Water;
+                    TimeFor.Text = "\U0001f4a7 " + AppResources.TimeFor + AppResources.Water;
                     break;
             }
 
@@ -79,19 +80,28 @@ namespace Nutriomly.Views
             {
                 var proteins = IngredientManager.GetIngredient(category, FoodTypes.Proteins);
                 var carbohydrates = IngredientManager.GetIngredient(category, FoodTypes.Carbohydrates);
-                var vegetables = IngredientManager.GetIngredient(category, FoodTypes.Vegetables);
+                var vegetables1 = IngredientManager.GetIngredient(category, FoodTypes.Vegetables);
+                var vegetables2 = IngredientManager.GetIngredient(category, FoodTypes.Vegetables, new List<Ingredient> { vegetables1 });
+                var vegetables3 = IngredientManager.GetIngredient(category, FoodTypes.Vegetables, new List<Ingredient> { vegetables1, vegetables2 });
+
                 var essentialFats = IngredientManager.GetIngredient(category, FoodTypes.EssentialFattyAcids);
 
                 Proteins.Text = proteins.Emoji + " " + AppResources.Quarter + proteins.Name;
                 Carbohydrates.Text = carbohydrates.Emoji + " " + AppResources.Quarter + carbohydrates.Name;
-                Vegetables.Text = vegetables.Emoji + " " + AppResources.Half + vegetables.Name;
+                Vegetables.Text = "\U0001f345 " + AppResources.Half + vegetables1.Name + ", " + vegetables2.Name + " y " + vegetables3.Name;
                 EssentialFattyAcids.Text = essentialFats.Emoji + " " + essentialFats.Name;
+                Info.IsVisible = true;
+
             }
 
             if (category == Categories.Tentempie)
             {
                 var dessert = IngredientManager.GetIngredient(category, FoodTypes.Desserts);
                 Proteins.Text = dessert.Emoji + " " + dessert.Name;
+                Carbohydrates.Text = string.Empty;
+                Vegetables.Text = string.Empty;
+                EssentialFattyAcids.Text = string.Empty;
+                Info.IsVisible = false;
             }
 
             if (category == Categories.BreakfastAndTea)
@@ -101,6 +111,10 @@ namespace Nutriomly.Views
 
                 Proteins.Text = dessert.Emoji + " " + dessert.Name;
                 Carbohydrates.Text = carbohydrates.Emoji + " " + carbohydrates.Name;
+                Vegetables.Text = string.Empty;
+                EssentialFattyAcids.Text = string.Empty;
+                Info.IsVisible = false;
+
             }
         }
     }

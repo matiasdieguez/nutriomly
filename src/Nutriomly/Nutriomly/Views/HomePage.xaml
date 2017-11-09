@@ -4,36 +4,45 @@
              x:Class="Nutriomly.Views.HomePage"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout>
-            <Image 
-                    Source="logo.png" 
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Image 
+                    x:Name="Info"
                     HorizontalOptions="Center"
-                    Margin="20,20,20,20"/>
-            <Label 
+                    WidthRequest="140"
+                    HeightRequest="140"
+                    Source="info.png"/>
+                <Label 
                     x:Name="TimeFor"
+                    FontSize="Large"
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
                     Margin="10,10,10,10"/>
-            <Label 
+                <Label 
                     x:Name="Proteins"
+                    FontSize="Large"
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
                     Margin="10,10,10,10"/>
-            <Label 
+                <Label 
                     x:Name="Carbohydrates"
+                    FontSize="Large"
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
                     Margin="10,10,10,10"/>
-            <Label 
+                <Label 
                     x:Name="Vegetables"
+                    FontSize="Large"
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
                     Margin="10,10,10,10"/>
-            <Label 
+                <Label 
                     x:Name="EssentialFattyAcids"
+                    FontSize="Large"
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
                     Margin="10,10,10,10"/>
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -16,12 +16,12 @@ namespace Nutriomly
                 case Device.iOS:
                     itemsPage = new NavigationPage(new HomePage())
                     {
-                        Title = "Nutriomly"
+                        Title = "Mi comida"
                     };
 
                     aboutPage = new NavigationPage(new AboutPage())
                     {
-                        Title = "About"
+                        Title = "Info"
                     };
                     itemsPage.Icon = "tab_feed.png";
                     aboutPage.Icon = "tab_about.png";
@@ -29,12 +29,12 @@ namespace Nutriomly
                 default:
                     itemsPage = new HomePage()
                     {
-                        Title = "Nutriomly"
+                        Title = "Mi comida"
                     };
 
                     aboutPage = new AboutPage()
                     {
-                        Title = "About"
+                        Title = "Info"
                     };
                     break;
             }
