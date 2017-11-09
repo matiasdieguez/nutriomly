@@ -16,13 +16,11 @@ namespace Nutriomly.Views
         {
             InitializeComponent();
             BindingContext = this;
-
+            Generate();
         }
 
-        protected override void OnAppearing()
+        public void Generate()
         {
-            base.OnAppearing();
-
             var breakfastStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
             var breakfastEnd = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 10, 59, 59);
 
@@ -71,7 +69,6 @@ namespace Nutriomly.Views
                     TimeFor.Text = "\U0001f4a7 " + AppResources.TimeFor + AppResources.Water;
                     break;
             }
-
         }
 
         public void GenerateFood(Categories category)
@@ -116,6 +113,11 @@ namespace Nutriomly.Views
                 Info.IsVisible = false;
 
             }
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Generate();
         }
     }
 }

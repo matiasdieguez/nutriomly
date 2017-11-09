@@ -42,6 +42,9 @@
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Center"
                     Margin="10,10,10,10"/>
+                <Button 
+                    Text="Otra receta"
+                    Clicked="Button_Clicked"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
